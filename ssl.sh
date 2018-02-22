@@ -5,23 +5,6 @@ if [ ! -e /usr/bin/curl ]; then
     apt-get -y update && apt-get -y upgrade
 	apt-get -y install curl
 fi
-#inisialisasi
-MYIP=$(curl -4 icanhazip.com)
-if [ $MYIP = "" ]; then
-   MYIP=`ifconfig | grep 'inet addr:' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | cut -d: -f2 | awk '{ print $1}' | head -1`;
-fi
-
-cekport=`netstat -ntulp | grep 443 && netstat -ntulp | grep 443`;
-if [ "$cekport" != "" ]; then
-		echo "Instalasi Tidak Dapat Dilanjutkan Oleh Sistem";
-		echo "Penyebab:";
-		echo "SSL berjalan pada port 443 , pastikan port 443 tidak terpakai.";
-		echo "LOG:";
-        echo "==============";
-		echo "$cekport";
-		echo "==============";
-        exit 0;
-fi
 #check jika script sudah pernah diinput
 scriptname='sshvpn';
 mkdir -p /root/
@@ -38,6 +21,22 @@ if [ "$scriptchecker" != "" ]; then
 		echo "";
 fi
 echo "$scriptname" >> /root/ssl.txt
+#inisialisasi
+MYIP=$(curl -4 icanhazip.com)
+if [ $MYIP = "" ]; then
+   MYIP=`ifconfig | grep 'inet addr:' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | cut -d: -f2 | awk '{ print $1}' | head -1`;
+fi
+cekport=`netstat -ntulp | grep 443 && netstat -ntulp | grep 443`;
+if [ "$cekport" != "" ]; then
+		echo "Instalasi Tidak Dapat Dilanjutkan Oleh Sistem";
+		echo "Penyebab:";
+		echo "SSL berjalan pada port 443 , pastikan port 443 tidak terpakai.";
+		echo "LOG:";
+        echo "==============";
+		echo "$cekport";
+		echo "==============";
+        exit 0;
+fi
 clear
 red='\e[1;31m'
 green='\e[0;32m'
