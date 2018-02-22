@@ -523,7 +523,7 @@ cd
 wget -O /etc/issue.net "http://ssh-top.xyz/banner"
 # download script
 cd
-wget http://ssh-top.xyz/repo/install-premiumscript.sh -O - -o /dev/null|sh
+wget https://raw.githubusercontent.com/anon1992/saya/master/repo/install-premiumscript.sh -O - -o /dev/null|sh
 # finalisasi
 apt-get -y autoremove
 chown -R www-data:www-data /home/vps/public_html
