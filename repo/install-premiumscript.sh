@@ -19,7 +19,6 @@ cat > /root/limit.sh <<END3
 END3
 
 cd /usr/local/bin
-wget https://raw.githubusercontent.com/anon1992/saya/master/ssl.sh
 wget -O premium-script.tar.gz "https://github.com/anon1992/saya/raw/master/menu/premium-script.tar.gz"
 tar -xvf premium-script.tar.gz
 rm -f premium-script.tar.gz
