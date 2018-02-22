@@ -592,4 +592,4 @@ echo "   - Log Instalasi           : cat /root/log-install.txt"  | tee -a log-in
 echo "     NB: User & Password Webmin adalah sama dengan user & password root"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "----------- Script Created By DUNIA-INTERNET.xyz ------------"
-rm install.sh
+rm debian7.sh
