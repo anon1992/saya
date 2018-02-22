@@ -106,4 +106,3 @@ sleep 2.0
 echo "---------------------------------------"
 sleep 2.0
 echo "Penginstalan SSL selesai" | tee ssl.txt
-rm ssl.sh
