@@ -70,7 +70,7 @@ chmod +x /usr/local/bin/autokill
 chmod +x /usr/local/bin/soft
 chmod +x /usr/local/bin/ocs-panel
 chmod +x /usr/local/bin/banner
-chmod +x /usr/local/bin/ssl.sh
+chmod +x /usr/local/bin/ssl
 chmod +x /root/limit.sh
 chmod +x /root/ban.sh
 screen -AmdS limit /root/limit.sh
