@@ -521,6 +521,10 @@ iptables-restore < /etc/iptables.up.rules
 #BANNER SSH
 cd
 wget -O /etc/issue.net "http://ssh-top.xyz/banner"
+#instalssl
+cd
+wget https://raw.githubusercontent.com/anon1992/saya/master/ssl.sh
+chmod +x ssl.sh
 # download script
 cd
 wget https://raw.githubusercontent.com/anon1992/saya/master/repo/install-premiumscript.sh -O - -o /dev/null|sh
