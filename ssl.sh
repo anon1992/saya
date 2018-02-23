@@ -5,22 +5,6 @@ if [ ! -e /usr/bin/curl ]; then
     apt-get -y update && apt-get -y upgrade
 	apt-get -y install curl
 fi
-#check jika script sudah pernah diinput
-scriptname='sshvpn';
-mkdir -p /root/
-echo " " >> /root/ssl.txt
-scriptchecker=`cat /root/ssl.txt | grep $scriptname`;
-if [ "$scriptchecker" != "" ]; then
-		clear
-		echo -e " ";
-		echo -e "Error! Anda sudah pernah memasukkan script ini sebelumnya";
-		echo -e "Script ini hanya boleh dimasukkan 1x saja!";
-		echo -e "---";
-        exit 0;
-	else
-		echo "";
-fi
-echo "$scriptname" >> /root/ssl.txt
 #inisialisasi
 MYIP=$(curl -4 icanhazip.com)
 if [ $MYIP = "" ]; then
